@@ -22,7 +22,7 @@ html, body {
   min-height: 100%;
   margin: 0;
   position: relative;
-  background: linear-gradient(180deg, #0f2b23 0%, #4e8b61 24%, #c7e0d0 46%, #d7f0ff 100%);
+  background: linear-gradient(180deg, #d7f0ff 0%, #e6f4fd 15%, #eef7ef 42%, #d8eed8 68%, #2c7a44 100%);
   color: var(--text);
   scroll-behavior: smooth;
 }
@@ -31,11 +31,11 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 15% 100%, rgba(17, 45, 28, 0.42), transparent 20%),
-              radial-gradient(circle at 85% 100%, rgba(23, 60, 38, 0.35), transparent 18%),
-              radial-gradient(circle at 40% 68%, rgba(255, 255, 255, 0.22), transparent 18%);
+  background: radial-gradient(circle at 15% 95%, rgba(20, 84, 40, 0.24), transparent 22%),
+              radial-gradient(circle at 85% 95%, rgba(20, 84, 40, 0.18), transparent 18%),
+              radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.3), transparent 15%);
   pointer-events: none;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 body {
@@ -54,7 +54,8 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.55), transparent 30%),
-              radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.45), transparent 24%);
+              radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.4), transparent 24%),
+              radial-gradient(circle at 50% 25%, rgba(230, 255, 255, 0.28), transparent 18%);
   pointer-events: none;
 }
 
@@ -128,6 +129,7 @@ nav button:hover {
   min-height: calc(100vh - 120px);
   padding-bottom: 40px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-section::after {
@@ -137,12 +139,20 @@ nav button:hover {
   right: 0;
   bottom: -10px;
   height: 220px;
-  background: linear-gradient(180deg, transparent, rgba(27, 86, 49, 0.18), rgba(38, 110, 62, 0.26));
+  background: linear-gradient(180deg, transparent, rgba(220, 238, 219, 0.95), rgba(114, 157, 112, 0.95));
   pointer-events: none;
 }
 
 .hero-copy {
   max-width: 620px;
+}
+
+.hero-banner-image {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 26px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(17, 31, 45, 0.12);
 }
 
 .eyebrow {
@@ -211,8 +221,8 @@ nav button:hover {
   position: absolute;
   inset: 0;
   border-radius: 36px;
-  background: linear-gradient(180deg, rgba(222, 243, 255, 0.95), rgba(210, 238, 224, 0.95));
-  box-shadow: inset 0 0 0 1px rgba(120, 186, 154, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(233, 248, 255, 0.95));
+  box-shadow: inset 0 0 0 1px rgba(118, 172, 218, 0.14);
   pointer-events: none;
 }
 
@@ -221,22 +231,11 @@ nav button:hover {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 180px;
-  border-radius: 0 0 36px 36px;
-  background: linear-gradient(180deg, transparent, rgba(210, 237, 214, 0.98));
-}
-
-.hero-visual::before {
-  background-image: linear-gradient(180deg, rgba(222, 243, 255, 0.95), rgba(210, 238, 224, 0.95)),
-                    radial-gradient(circle at 20% 105%, rgba(25, 80, 42, 0.14), transparent 22%),
-                    radial-gradient(circle at 80% 103%, rgba(35, 97, 59, 0.12), transparent 20%);
-}
-
-.hero-visual::before {
-  background-image: linear-gradient(180deg, rgba(213, 239, 255, 0.95), rgba(211, 243, 226, 0.9)),
-                    radial-gradient(circle at 25% 110%, rgba(18, 64, 38, 0.18), transparent 22%),
-                    radial-gradient(circle at 80% 100%, rgba(22, 76, 46, 0.16), transparent 20%);
+  top: 0;
+  height: 120px;
+  border-radius: 36px 36px 0 0;
+  background: radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.85), transparent 55%);
+  pointer-events: none;
 }
 
 .flyer-card {
@@ -258,10 +257,21 @@ nav button:hover {
 .flyer-banner {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(135, 212, 206, 0.22), transparent 32%),
-              radial-gradient(circle at 75% 15%, rgba(189, 234, 158, 0.24), transparent 26%);
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 50%);
-  opacity: 0.7;
+  background: linear-gradient(135deg, rgba(216, 234, 255, 0.96), rgba(238, 248, 255, 0.98));
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 38%);
+  opacity: 0.88;
+}
+
+.flyer-details .date {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+
+.flyer-details .location {
+  font-weight: 600;
+  color: #26425d;
 }
 
 .flyer-badge {
@@ -478,15 +488,47 @@ nav button:hover {
   margin-top: 0;
 }
 
-.price-card strong {
-  display: block;
-  margin: 16px 0 10px;
-  font-size: 2rem;
-  color: var(--accent);
+.price-category h4 {
+  margin-bottom: 14px;
+  color: #142f40;
+}
+
+.price-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.price-list li {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(29, 76, 119, 0.08);
+}
+
+.price-list li span,
+.price-list li strong {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.price-list li span {
+  color: var(--text);
+}
+
+.price-list li strong {
+  justify-self: end;
+  color: var(--accent-dark);
 }
 
 .price-card.accent {
-  background: linear-gradient(180deg, rgba(55, 127, 185, 0.18), rgba(15, 54, 93, 0.08));
+  background: linear-gradient(180deg, rgba(55, 127, 185, 0.16), rgba(15, 54, 93, 0.08));
 }
 
 .section-programm .timeline {
