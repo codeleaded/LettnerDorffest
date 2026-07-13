@@ -183,32 +183,7 @@ nav button:hover {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 30px;
-}
-
-.hero-schedule {
-  display: grid;
-  gap: 14px;
-  margin-top: 28px;
-  padding: 18px 18px 20px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(29, 76, 119, 0.08);
-}
-
-.hero-schedule div {
-  display: grid;
-  gap: 6px;
-}
-
-.hero-schedule strong {
-  font-size: 1rem;
-  color: #1f4d74;
-}
-
-.hero-schedule p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
+  justify-content: flex-start;
 }
 
 .button {
@@ -226,14 +201,17 @@ nav button:hover {
 }
 
 .primary {
-  background: linear-gradient(135deg, #1b4277, #0e2b4f);
+  display: none;
+}
+
+.private-highlight {
+  background: linear-gradient(135deg, #4aa0df, #145a9d);
   color: #fff;
-  box-shadow: 0 18px 40px rgba(23, 63, 103, 0.24);
+  box-shadow: 0 20px 50px rgba(18, 77, 130, 0.28);
 }
 
 .secondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
+  display: none;
 }
 
 .hero-visual {
