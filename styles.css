@@ -137,9 +137,9 @@ nav button:hover {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px;
-  height: 220px;
-  background: linear-gradient(180deg, transparent, rgba(220, 238, 219, 0.95), rgba(114, 157, 112, 0.95));
+  bottom: 0;
+  height: 0;
+  background: none;
   pointer-events: none;
 }
 
@@ -183,6 +183,32 @@ nav button:hover {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 30px;
+}
+
+.hero-schedule {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 18px 18px 20px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(29, 76, 119, 0.08);
+}
+
+.hero-schedule div {
+  display: grid;
+  gap: 6px;
+}
+
+.hero-schedule strong {
+  font-size: 1rem;
+  color: #1f4d74;
+}
+
+.hero-schedule p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .button {
