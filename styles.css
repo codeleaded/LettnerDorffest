@@ -1,16 +1,16 @@
 :root {
-  color-scheme: dark;
-  --bg: #0f1316;
-  --surface: rgba(22, 28, 36, 0.88);
-  --surface-2: rgba(255, 255, 255, 0.05);
-  --text: #f5f3ef;
-  --muted: #c6c2be;
-  --accent: #ffb347;
-  --accent-dark: #d57d04;
-  --accent-soft: #ffd8a1;
-  --green: #8ec06c;
-  --pink: #e97d9d;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+  color-scheme: light;
+  --bg: #f3fbff;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-2: rgba(218, 244, 255, 0.92);
+  --text: #0f212f;
+  --muted: #4d6a7a;
+  --accent: #2b7a56;
+  --accent-dark: #1f5d42;
+  --accent-soft: #a6d9c2;
+  --sky: #d7f0ff;
+  --grass: #d8eddc;
+  --shadow: 0 22px 45px rgba(17, 31, 45, 0.12);
   font-family: 'Inter', sans-serif;
 }
 
@@ -21,9 +21,7 @@
 html, body {
   min-height: 100%;
   margin: 0;
-  background: radial-gradient(circle at top left, rgba(255, 180, 105, 0.16), transparent 28%),
-              radial-gradient(circle at bottom right, rgba(70, 189, 112, 0.14), transparent 32%),
-              linear-gradient(180deg, #11161b 0%, #081014 100%);
+  background: linear-gradient(180deg, #e8f6ff 0%, #f8fbef 46%, #f7f9fb 100%);
   color: var(--text);
   scroll-behavior: smooth;
 }
@@ -33,7 +31,7 @@ body {
 }
 
 .page-shell {
-  max-width: 1300px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 24px;
 }
@@ -53,15 +51,15 @@ body {
 }
 
 .brand-mark {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   display: grid;
   place-items: center;
   border-radius: 18px;
-  background: linear-gradient(135deg, #ffb347, #d57d04);
-  color: #111;
+  background: linear-gradient(135deg, #8ec06c, #2b7a56);
+  color: #fff;
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
 .brand p {
@@ -107,6 +105,18 @@ nav button:hover {
   align-items: center;
   min-height: calc(100vh - 120px);
   padding-bottom: 40px;
+  position: relative;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 210px;
+  background: radial-gradient(circle at center top, rgba(142, 192, 108, 0.34), transparent 45%);
+  pointer-events: none;
 }
 
 .hero-copy {
@@ -125,8 +135,8 @@ nav button:hover {
 
 .hero-copy h1 {
   margin: 0 0 24px;
-  font-size: clamp(2.8rem, 3vw, 4.5rem);
-  line-height: 0.96;
+  font-size: clamp(2.8rem, 3vw, 4.2rem);
+  line-height: 1.02;
 }
 
 .hero-copy p {
@@ -179,21 +189,31 @@ nav button:hover {
   position: absolute;
   inset: 0;
   border-radius: 36px;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 179, 88, 0.22), transparent 25%),
-              radial-gradient(circle at 80% 35%, rgba(142, 192, 108, 0.18), transparent 22%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(215, 240, 255, 0.75));
+  box-shadow: inset 0 0 0 1px rgba(125, 196, 167, 0.12);
   pointer-events: none;
+}
+
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 140px;
+  border-radius: 0 0 36px 36px;
+  background: linear-gradient(180deg, transparent, rgba(182, 226, 179, 0.95));
 }
 
 .flyer-card {
   position: relative;
   z-index: 1;
-  min-height: 340px;
-  padding: 30px;
-  border-radius: 32px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow);
+  min-height: 360px;
+  padding: 32px;
+  border-radius: 38px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(120, 190, 170, 0.28);
+  box-shadow: 0 26px 60px rgba(47, 82, 66, 0.16);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -201,18 +221,27 @@ nav button:hover {
   animation: fadeInUp 1.2s ease both;
 }
 
+.flyer-banner {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(135, 212, 206, 0.22), transparent 32%),
+              radial-gradient(circle at 75% 15%, rgba(189, 234, 158, 0.24), transparent 26%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 50%);
+  opacity: 0.7;
+}
+
 .flyer-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: max-content;
-  padding: 12px 18px;
+  padding: 14px 22px;
   border-radius: 999px;
-  color: #111;
+  color: #fff;
   font-weight: 800;
-  background: var(--accent);
+  background: linear-gradient(135deg, #2b7a56, #1f5d42);
   letter-spacing: 0.04em;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .flyer-details p,
@@ -224,6 +253,68 @@ nav button:hover {
 .flyer-details .location {
   font-weight: 700;
   margin-bottom: 16px;
+  color: var(--accent-dark);
+}
+
+.flyer-meta {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.flyer-meta p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.flyer-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.flyer-keywords span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(47, 122, 90, 0.1);
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.flyer-panel {
+  padding: 20px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #1b3b62, #0d2444);
+  color: #f5f3ef;
+}
+
+.panel-title {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+  font-family: 'Dancing Script', cursive;
+}
+
+.flyer-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.flyer-panel li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flyer-panel li::before {
+  content: '•';
+  color: var(--accent-soft);
 }
 
 .flyer-details ul {
@@ -231,7 +322,7 @@ nav button:hover {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .flyer-details li {
@@ -249,6 +340,20 @@ nav button:hover {
 .hero-images {
   display: grid;
   gap: 18px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.hero-images::before {
+  content: '';
+  position: absolute;
+  left: -10%;
+  top: -14%;
+  width: 120%;
+  height: 130%;
+  background: radial-gradient(circle at 50% 0%, rgba(212, 241, 255, 0.85), transparent 42%);
+  pointer-events: none;
+  border-radius: 40px;
 }
 
 .hero-images img {
@@ -266,15 +371,15 @@ nav button:hover {
 
 .section {
   margin-top: 64px;
-  padding: 38px 28px;
+  padding: 38px 30px;
   border-radius: 32px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(111, 173, 140, 0.22);
+  box-shadow: 0 24px 60px rgba(47, 82, 66, 0.08);
 }
 
 .glass-section {
-  background: rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(217, 245, 247, 0.85), rgba(255, 255, 255, 0.7));
 }
 
 .section-head {
@@ -286,13 +391,15 @@ nav button:hover {
   font-size: 0.9rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-dark);
   margin-bottom: 12px;
 }
 
 .section-head h2 {
   margin: 0;
   font-size: clamp(2rem, 2.4vw, 2.7rem);
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 0.02em;
 }
 
 .flyer-grid,
@@ -311,9 +418,9 @@ nav button:hover {
 .price-card {
   padding: 24px;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(151, 201, 168, 0.26);
+  box-shadow: 0 20px 60px rgba(47, 82, 66, 0.08);
 }
 
 .flyer-card-small h3,
@@ -341,9 +448,9 @@ nav button:hover {
 .timeline-item {
   padding: 26px;
   border-radius: 26px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  background: rgba(224, 248, 243, 0.96);
+  border: 1px solid rgba(150, 210, 176, 0.32);
+  box-shadow: 0 16px 48px rgba(47, 82, 66, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -368,17 +475,17 @@ nav button:hover {
 .tree-node {
   padding: 26px 32px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.1);
+  background: rgba(226, 247, 232, 0.96);
+  border: 1px solid rgba(151, 201, 168, 0.3);
+  box-shadow: 0 16px 45px rgba(47, 82, 66, 0.08);
   min-width: 140px;
   text-align: center;
   position: relative;
 }
 
 .root {
-  background: linear-gradient(135deg, #ffd69e, #f7ab5f);
-  color: #111;
+  background: linear-gradient(135deg, #a3d8c4, #5da37e);
+  color: #0f212f;
   min-width: 180px;
 }
 
@@ -400,7 +507,7 @@ nav button:hover {
   border-radius: 26px;
   object-fit: cover;
   aspect-ratio: 4 / 3;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(148, 204, 157, 0.28);
 }
 
 .hidden {
@@ -422,9 +529,9 @@ nav button:hover {
   width: min(520px, 90vw);
   padding: 32px;
   border-radius: 28px;
-  background: rgba(15, 19, 22, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.4);
+  background: rgba(246, 251, 255, 0.96);
+  border: 1px solid rgba(113, 181, 145, 0.28);
+  box-shadow: 0 36px 90px rgba(47, 82, 66, 0.16);
 }
 
 .close-button {
@@ -443,6 +550,7 @@ nav button:hover {
 
 .modal-panel h3 {
   margin-top: 0;
+  color: var(--text);
 }
 
 .modal-panel p {
@@ -460,8 +568,8 @@ nav button:hover {
 .modal-panel input {
   width: 100%;
   padding: 16px 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(113, 181, 145, 0.35);
   color: var(--text);
   border-radius: 18px;
   font-size: 1rem;
@@ -477,6 +585,7 @@ nav button:hover {
   margin: 48px 0 16px;
   text-align: center;
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
 @media (max-width: 980px) {
@@ -542,4 +651,15 @@ nav button:hover {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 5px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, rgba(43, 122, 86, 0.9), rgba(167, 217, 184, 0.4));
 }
